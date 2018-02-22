@@ -95,7 +95,7 @@ class Advertisement(dbus.service.Object):
                 'ManufacturerData': None,
                 'SolicitUUIDs': None,
                 'ServiceData': None,
-                'IncludeTxPower': False
+                'IncludeTxPower': False,
                 'LocalName': name
             }
         }
