@@ -75,8 +75,8 @@ class Application(dbus.service.Object):
         """
         # Initialise the D-Bus path and register it
         self.bus = dbus.SystemBus()
-        self.path = '/ukBaz/bluezero'
-        self.bus_name = dbus.service.BusName('ukBaz.bluezero', self.bus)
+        self.path = '/org/bluez'
+        self.bus_name = dbus.service.BusName('org.bluez', self.bus)
         dbus.service.Object.__init__(self, self.bus_name, self.path)
 
         # Objects to be associated with this service
@@ -128,7 +128,7 @@ class Service(dbus.service.Object):
 
     """
 
-    PATH_BASE = '/ukBaz/bluezero/service'
+    PATH_BASE = '/org/bluez/service'
 
     def __init__(self, service_id, uuid, primary):
         """Default initialiser.

@@ -83,7 +83,7 @@ class Advertisement(dbus.service.Object):
         :param ad_type: Possible values: "broadcast" or "peripheral"
         """
         # Setup D-Bus object paths and register service
-        self.path = '/ukBaz/bluezero/advertisement{0:04d}'.format(advert_id)
+        self.path = '/org/bluez/advertisement{0:04d}'.format(advert_id)
         self.bus = dbus.SystemBus()
         self.eventloop = async_tools.EventLoop()
         self.interface = constants.LE_ADVERTISEMENT_IFACE

@@ -135,8 +135,8 @@ class Application(dbus.service.Object):
 
         # Initialise the D-Bus path and register it
         self.bus = dbus.SystemBus()
-        self.path = '/ukBaz/bluezero/application{}'.format(id(self))
-        self.bus_name = dbus.service.BusName('ukBaz.bluezero', self.bus)
+        self.path = '/org/bluez/application{}'.format(id(self))
+        self.bus_name = dbus.service.BusName('org.bluez', self.bus)
         dbus.service.Object.__init__(self, self.bus_name, self.path)
 
         # Initialise services within the application
@@ -293,7 +293,7 @@ class Service(dbus.service.Object):
 
     """
 
-    PATH_BASE = '/ukBaz/bluezero/service1'
+    PATH_BASE = '/org/bluez/service1'
 
     def __init__(self, uuid, primary, type='peripheral'):
         """Default initialiser.
@@ -820,7 +820,7 @@ class Advertisement(dbus.service.Object):
     .. seealso:: :class:`Application`
     """
 
-    PATH_BASE = '/ukBaz/bluezero/advertisement'
+    PATH_BASE = '/org/bluez/advertisement'
 
     def __init__(self, service, advertising_type):
         """"Default initialiser.
